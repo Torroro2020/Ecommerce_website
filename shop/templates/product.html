@@ -7,36 +7,25 @@
     <div class="container py-5">
         <div class="row mt-5">
             <div class="col-10 mx-auto col-md-6 my-3">
-                <img src="{% static 'image/lot2.jpg' %}">
+                <img src="{{ product.image.url }}">
             </div>
         </div>
     </div>
     <div class="col-10 mx-auto col-md-6 my-3">
         <div>
-            <h1 class="product_title"> Teddy Bear </h1>
+            <h1 class="product_title"> {{ product.name }} </h1>
             <h5 class="text-info font-italic mb-4">
-                $9.99
+                {{ product.price }}
             </h5>
             <p class="product_desc"> Product Description </p>
             <p class="text-justify product_text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Tempor commodo ullamcorper a lacus vestibulum sed. Aliquet lectus proin nibh nisl
-                condimentum. Aliquam sem et tortor consequat id porta nibh. Sit amet mattis vulputate enim nulla
-                aliquet. Sit amet venenatis urna cursus. Ac felis donec et odio pellentesque diam volutpat commodo.
-                Tristique nulla aliquet enim tortor at. Sagittis id consectetur purus ut faucibus pulvinar elementum
-                integer enim. Non odio euismod lacinia at.
-
-                Enim ut tellus elementum sagittis. Ipsum consequat nisl vel pretium lectus. Ut pharetra sit amet aliquam
-                id diam. Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Risus nullam eget
-                felis eget nunc lobortis mattis aliquam faucibus. Vitae purus faucibus ornare suspendisse sed. Enim
-                lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Id semper risus in hendrerit gravida
-                rutrum quisque non tellus. Venenatis urna cursus eget nunc scelerisque. Odio pellentesque diam volutpat
-                commodo sed egestas egestas. Turpis massa sed elementum tempus. Egestas integer eget aliquet nibh
-                praesent. Semper auctor neque vitae tempus. Quisque sagittis purus sit amet volutpat consequat mauris.
-                Lacus sed turpis tincidunt id. Vitae suscipit tellus mauris a diam maecenas. Felis imperdiet proin
-                fermentum leo vel. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant.
+                {{ product.description }}
             </p>
+            {% if product.stock <= 0 %}
             <p class="text-justify product_text"> Out of Stock </p>
+            {% else %}
+            <a href=""> Add To Cart </a>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
