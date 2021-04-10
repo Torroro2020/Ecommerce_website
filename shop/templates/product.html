@@ -7,7 +7,7 @@
     <div class="container py-5">
         <div class="row mt-5">
             <div class="col-10 mx-auto col-md-6 my-3">
-                <img src="{{ product.image.url }}">
+                <img src="{{ product.image.url }}" width="400" height="500">
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
             {% if product.stock <= 0 %}
             <p class="text-justify product_text"> Out of Stock </p>
             {% else %}
-            <a href=""> Add To Cart </a>
+            <a href="{% url 'add_cart' product.id %}"> Add To Cart </a>
             {% endif %}
         </div>
     </div>
