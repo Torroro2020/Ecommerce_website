@@ -11,7 +11,7 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{% url 'home' %}"> All products </a>
                     {% for category in links %}
-                    <a class="dropdown-item" href="{{ category.get_url }}"> {{ category.name }} </a>
+                        <a class="dropdown-item" href="{{ category.get_url }}"> {{ category.name }} </a>
                     {% endfor %}
                 </div>
             </li>
@@ -19,6 +19,15 @@
                 Contacts </a></li>
             <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href=""> About </a>
             </li>
+            {%if item_count > 0 %}
+            <li class="nav-item">
+                <a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{% url 'cart_detail' %}">
+                    <i class="material-icons cart-icon">
+                        add_shopping_cart </i>
+                    ({{ item_count }})
+                </a>
+            </li>
+            {% endif %}
         </ul>
 
         <form class="form-inline">
