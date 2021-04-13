@@ -21,7 +21,7 @@ body {
     letter-spacing: .2em;
 }
 
-.errorlist li {
+.errorlist {
     color: red;
     font-weight: bold;
 }
